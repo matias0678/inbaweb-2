@@ -1,0 +1,17 @@
+.cta {
+      margin-top: 2rem;
+    }
+
+    .cta a {
+      background-color: var(--azul-oscuro);
+      color: var(--blanco);
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #5d93c3;
+    }

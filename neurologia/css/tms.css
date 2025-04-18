@@ -1,0 +1,238 @@
+:root {
+    --azul: #0D2AD1;
+    --gris-fondo: #f5f5f5;
+    --texto: #333;
+    --blanco: #fff;
+  }
+
+  body {
+    background: var(--gris-fondo);
+    color: var(--texto);
+    line-height: 1.6;
+  }
+
+  header {
+    background: url('/image/webp/equipoTms.webp') center/cover no-repeat;
+    color: var(--blanco);
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2rem 2rem; /* Usamos 6rem para compensar el nav fijo */
+    min-height: calc(100vh - 4rem); 
+    box-sizing: border-box;
+  }
+  
+  
+  @media (max-height: 750px) {
+    header {
+      min-height: auto;
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+    }
+  }
+  
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 42, 209, 0.4);
+    z-index: 0;
+  }
+  
+  header > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  header p {
+    font-size: 1.1rem;
+    max-width: 720px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      padding: 3rem 1rem 2rem;
+    }
+  
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+  
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+  
+    .media-logos {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  
+    .media-logos img {
+      width: 110px;
+      height: 60px;
+      padding: 6px 10px;
+    }
+  }
+  
+  @media (max-width: 430px) {
+    header {
+      padding-top: 1.5rem;
+    }
+  
+    header h1 {
+      font-size: 2.2rem;
+    }
+  
+    header p {
+      font-size: 1rem;
+    }
+  
+    .cta a {
+      font-size: 1rem;
+      padding: 0.7rem 1.2rem;
+    }
+  
+    .media-logos img {
+      width: 90px;
+      height: 50px;
+    }
+  }
+  
+  
+
+  section {
+    padding: 2rem 1.5rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+
+  h2 {
+    color: var(--azul);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  /* intro */
+
+  .two-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .two-column img {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  .text-content {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  /* content de que tratan */
+  .tms-condiciones details {
+    background: var(--blanco);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  }
+  
+  .tms-condiciones summary {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--azul);
+    cursor: pointer;
+  }
+  
+  .tms-condiciones ul {
+    padding-left: 1.5rem;
+    margin-top: 0.8rem;
+  }
+  
+  .tms-condiciones li {
+    margin-bottom: 0.4rem;
+  }
+  
+ 
+
+  /* custom cta */
+
+  .cta-box {
+    background: var(--azul);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+  }
+
+  .cta-box a {
+    display: inline-block;
+    margin-top: 1rem;
+    background: #ffffff;
+    color: var(--azul);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .cta-box a:hover {
+    background: #e0e0e0;
+  }
+
+  @media (max-width: 768px) {
+    .two-column {
+      flex-direction: column;
+    }
+  }
+
+  section[data-aos="fade-up"] div[style*="transition"]:hover {
+    transform: translateY(-6px);
+  }
+
+
+  /* flotante de tenes dudas */
+
+  .btn-flotante-tms {
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    background-color: #0D2AD1;
+    color: #fff;
+    padding: 0.9rem 1.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    z-index: 999;
+    display: block;
+
+  }
+
+  @media (max-width: 768px) {
+    .btn-flotante-tms {
+      display: none;
+
+  }
+}
+  

@@ -1,0 +1,43 @@
+
+    .faq-tms {
+      background: #ffffff;
+      padding: 3rem 1.5rem;
+      border-radius: 1rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+  
+    .faq-tms h2 {
+      color: var(--azul);
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  
+    .faq-tms details {
+      background: #f8f9ff;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+  
+    .faq-tms summary {
+      font-weight: bold;
+      color: var(--azul);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .faq-tms p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+  
+    .faq-tms details[open] {
+      background-color: #eef3ff;
+    }

@@ -1,0 +1,40 @@
+.hero-contacto {
+    background: linear-gradient(rgba(13, 42, 209, 0.75), rgba(13, 42, 209, 0.75)), url('/image/webp/INBA-afuera.webp') center/cover no-repeat;
+    color: var(--blanco);
+    padding: 6rem 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;;
+  }
+  
+  .hero-contacto-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .hero-contacto h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-contacto p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-contacto {
+      padding: 4rem 1.5rem;
+    }
+  
+    .hero-contacto h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-contacto p {
+      font-size: 1rem;
+    }
+  }

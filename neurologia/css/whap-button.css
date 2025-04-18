@@ -1,0 +1,52 @@
+/* Configuracion de icono de whap */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Mantiene el botón a la derecha */
+    background-color: #10b982; /* Color de WhatsApp */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 32px; /* Tamaño del logo aumentado */
+    height: 32px; /* Tamaño del logo aumentado */
+    margin-right: 10px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.05); /* Agranda ligeramente el icono */
+}
+
+
+@media (max-width: 768px)  {
+    .whatsapp-button {
+        width: 50px; /* Tamaño del botón en móviles */
+        height: 50px;
+        padding: 0; /* Elimina el padding */
+        background-color: transparent; /* No background, solo la imagen */
+        border-radius: 50%; /* Mantiene el botón redondo */
+        justify-content: center; /* Centra el contenido */
+    }
+
+    .whatsapp-button img {
+        width: 100%; /* La imagen ocupa el 100% del botón */
+        height: 100%;
+        border-radius: 50%; /* Asegura que la imagen también sea redonda */
+        margin: 0; /* Elimina cualquier margen */
+    }
+
+    .whatsapp-button span {
+        display: none; /* Oculta el texto en móviles */
+    }
+    
+}

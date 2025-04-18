@@ -1,0 +1,33 @@
+:root {
+    --azul-oscuro: #0D2AD1;
+    --celeste: #70A9D5;
+    --gris-claro: #F5F5F5;
+    --blanco: #FFFFFF;
+    --gris-texto: #4a4a4a;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  body {
+    background-color: var(--gris-claro);
+    color: var(--gris-texto);
+    scroll-behavior: smooth;
+  }
+
+
+  section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }

@@ -1,0 +1,161 @@
+
+
+    /* General styles */
+    .google-reviews-carousel {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .carousel-title {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .carousel-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+    
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        align-items: flex-start; /* Permitir que cada tarjeta tenga su altura independiente */
+    }
+    
+    .review-card {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 0 10px;
+        flex: 0 0 25%; /* Default: 4 cards per row */
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 200px;
+    }
+    
+    .stars {
+        font-size: 1.5em;
+        color: #ffc107;
+        margin-bottom: 10px;
+    }
+    
+    .content {
+        font-size: 1.1em;
+        color: #444;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    
+    .reviewer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .reviewer-photo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .reviewer-info {
+        flex-grow: 1;
+        text-align: left;
+    }
+    
+    .reviewer-name {
+        font-size: 1em;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .reviewer-date {
+        font-size: 0.9em;
+        color: #777;
+    }
+    
+    .google-logo {
+        width: 26px;
+        height: 26px;
+    }
+    
+    /* Buttons */
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 10;
+    }
+    
+    .carousel-button.prev {
+        left: 10px;
+    }
+    
+    .carousel-button.next {
+        right: 10px;
+    }
+    
+    /* Responsive Design */
+    /* Responsividad mejorada */
+    @media (max-width: 1024px) {
+        .review-card {
+            flex: 0 0 calc(33.33% - 20px); /* 3 tarjetas */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .review-card {
+            flex: 0 0 calc(50% - 20px); /* 2 tarjetas */
+        }
+    
+        .carousel-button {
+            top: 55%;
+    
+        }
+
+        .content {
+            font-size: 1.2em;
+        }
+    
+    }
+    
+    /* Para pantallas pequeñas: solo una tarjeta, centrada y ajustada al ancho */
+    @media (max-width: 500px) {
+        .carousel-container {
+            overflow: hidden; /* Prevenir desbordamientos */
+        }
+    
+    
+        .review-card {
+            flex: 0 0 100%; /* Tomar todo el ancho disponible */
+            max-width: 95%; /* No exceder el ancho del contenedor */
+            height: auto; /* Permitir que la tarjeta crezca verticalmente */
+        }
+    
+        .carousel-button {
+            top: 62%;
+    
+        }
+    }
+    
+    
+    
+    
