@@ -7,413 +7,650 @@
   <meta name="description" content="Consultas, diagnósticos y segundas opiniones en neurocirugía con el equipo del Instituto de Neurología Buenos Aires. Más de 35 años de trayectoria médica.">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <style>
-    :root {
-      --azul-oscuro: #1e1e2d;
-      --gris-claro: #f5f5f5;
-      --blanco: #ffffff;
-      --azul-acento: #007bff;
-      --gris-intermedio: #e0e0e0;
-    }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--gris-claro);
-      color: var(--azul-oscuro);
-      line-height: 1.6;
-    }
+  <link rel="stylesheet" href="/min.css/whap-button.min.css">
+  <link rel="stylesheet" href="/min.css/cta.min.css">
+  <link rel="stylesheet" href="/min.css/menu.min.css">
+  <link rel="stylesheet" href="/min.css/footer.min.css">
+  <link rel="stylesheet" href="/min.css/header.min.css">
+  <link rel="stylesheet" href="/min.css/contacto.min.css">
 
-    .btn {
-      display: inline-block;
-      background-color: var(--azul-acento);
-      color: var(--blanco);
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-top: 1rem;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
 
-    .btn:hover {
-      background-color: #0056b3;
-    }
+  <link rel="stylesheet" href="general.css" />
+  <link rel="stylesheet" href="btn-cta.css" />
 
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid var(--blanco);
-      color: var(--blanco);
-    }
 
-    .btn-outline:hover {
-      background-color: var(--blanco);
-      color: var(--azul-oscuro);
-    }
+   <!-- Estilos extras-->
+   <script src="https://unpkg.com/lucide@latest"></script>
+  
+   <!-- Google Font para Lora -->
+   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+ 
+ 
+ 
+ 
+     <!-- Favicons -->
+     <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+     <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon-16x16.png">
+   
+   
+     
+       <!-- Open Graph -->
+     <meta property="og:title" content="Instituto de Neurología INBA">
+     <meta property="og:description" content="Más de 35 años de experiencia en neurocirugías. Atención médica de excelencia en Belgrano, CABA.">
+     <meta property="og:image" content="https://www.neurologiainba.com.ar/image/logotipo.jpg">
+     <meta property="og:url" content="https://www.neurologiainba.com.ar">
+     <meta property="og:type" content="website">
+   
+     <!-- Twitter Card -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Instituto de Neurología INBA">
+     <meta name="twitter:description" content="Atención médica neurológica de excelencia en CABA.">
+     <meta name="twitter:image" content="https://www.neurologiainba.com.ar/image/logotipo.jpg">
 
-    .header {
-      background-color: var(--blanco);
-      padding: 0.75rem 1.2rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .header-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .logo img {
-      width: 32px;
-      height: 32px;
-    }
-
-    .logo-text {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--azul-oscuro);
-    }
-
-    .menu-toggle {
-      width: 30px;
-      height: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .menu-toggle span {
-      display: block;
-      height: 3px;
-      background-color: var(--azul-oscuro);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100vw;
-      height: 100vh;
-      background-color: var(--blanco);
-      padding: 3rem 2rem;
-      transition: right 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .nav-header {
-      margin-bottom: 2rem;
-    }
-
-    .nav-header img {
-      width: 48px;
-      margin-bottom: 0.5rem;
-    }
-
-    .nav-header p {
-      font-size: 1rem;
-      color: var(--azul-oscuro);
-    }
-
-    .nav-close {
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      font-size: 2rem;
-      color: var(--azul-oscuro);
-      cursor: pointer;
-    }
-
-    .nav-menu ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-menu ul li {
-      margin: 1.5rem 0;
-    }
-
-    .nav-menu ul li a {
-      color: var(--azul-oscuro);
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    .nav-menu.active {
-      right: 0;
-    }
-
-    .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    .menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -7px);
-    }
-
-    @media(min-width: 768px) {
-      .menu-toggle {
-        display: none;
-      }
-
-      .nav-menu {
-        position: static;
-        height: auto;
-        width: auto;
-        flex-direction: row;
-        padding: 0;
-        background: none;
-        align-items: center;
-        justify-content: flex-end;
-      }
-
-      .nav-menu ul {
-        display: flex;
-        gap: 2rem;
-      }
-
-      .nav-header,
-      .nav-close {
-        display: none;
-      }
-    }
-
-    .hero {
-      background: url('https://neurologiainba.com.ar/imagenes/inba-bg.webp') center center / cover no-repeat;
-      color: var(--blanco);
-      position: relative;
-      padding: 6rem 1.5rem;
-      text-align: center;
-    }
-
-    .hero-overlay {
-      background: rgba(30, 30, 45, 0.85);
-      padding: 4rem 1rem;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: #f0f0f0;
-      margin-bottom: 2rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    section {
-      padding: 4rem 1.5rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    section p {
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      color: #444;
-    }
-
-    .condiciones {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: var(--blanco);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: var(--azul-acento);
-    }
-
-    .testimonios {
-      background-color: var(--blanco);
-      border-top: 1px solid var(--gris-intermedio);
-      border-bottom: 1px solid var(--gris-intermedio);
-      padding-top: 4rem;
-    }
-
-    .testimonios blockquote {
-      background-color: var(--gris-claro);
-      border-left: 5px solid var(--azul-acento);
-      padding: 1.5rem;
-      margin: 1.5rem auto;
-      font-style: italic;
-      max-width: 800px;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 2rem;
-    }
-  </style>
+  
 </head>
 <body>
-  <header class="header">
-    <div class="header-container">
-      <div class="logo">
-        <img src="https://neurologiainba.com.ar/imagenes/favicon-32x32.png" alt="INBA Logo">
-        <span class="logo-text">INBA</span>
-      </div>
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span><span></span><span></span>
-      </div>
-      <nav class="nav-menu" id="nav-menu">
-        <div class="nav-close" id="nav-close">&times;</div>
-        <div class="nav-header">
-          <img src="https://neurologiainba.com.ar/imagenes/favicon-32x32.png" alt="INBA Logo">
-          <p>Instituto de Neurología Buenos Aires</p>
+      <!-- Menu -->
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/" class="logo-header">
+            <img src="/image/INBA-logo-blanco-sinRelleno.png" alt="Logo INBA">
+          </a>          
+          <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="menu-icon" data-lucide="menu"></i>
+            <i class="close-icon" data-lucide="x"></i>
+          </button>      
+          <ul class="navbar-links">
+            <li><a href="/">Inicio</a></li>
+            <li class="dropdown">
+              <a href="javascript:void(0);" class="dropdown-toggle">
+                Servicios <span class="arrow">▾</span>
+              </a>
+              <div class="dropdown-content">
+                <a href="/estudios-neurologicos.html">Neurofisiología</a>
+                <a href="/tms.html">TMS</a>
+                <a href="/estudios-neurologicos.html">Neurocognición</a>
+                <a href="/estudios-neurologicos.html">Polisomnografía</a>
+                <a href="/estudios-neurologicos.html">Cannabis Medicinal</a>
+                <a href="/estudios-neurologicos.html">Nutrición</a>
+                <a href="/estudios-neurologicos.html">Neurocirugía</a>
+                <a href="/estudios-neurologicos.html">Neuropediatría</a>
+              </div>
+            </li>
+            <li><a href="/tms.html">TMS</a></li>
+            <li><a href="/neurologia-belgrano-inba.html">Nosotros</a></li>
+            <li><a href="/neurologia-contacto-belgrano.html">Contacto</a></li>
+            <li><a id="to-menu" href="https://turnos.elijasuturno.com.ar:444/inba">Turno Online e Informes</a></li>
+            <li class="menu-footer">
+              <div class="footer-logo">
+                <img src="/image/INBA-logo-blanco-sinRelleno.png" alt="Logo INBA">
+              </div>
+              <p class="footer-social-intro">
+                ¿Sabías que compartimos tips neurológicos en redes?<br>
+                Seguinos👇
+              </p>
+            
+              <div class="social-icons">
+                <a id="ig-footer" href="https://www.instagram.com/inba.neurologia" target="_blank" aria-label="Instagram INBA">
+                  <img src="/image/instagram.png" alt="Instagram INBA" />
+                </a>
+                <a id="tiktok-footer" href="https://www.tiktok.com/@doctorandersson" target="_blank" aria-label="TikTok Dr. Andersson">
+                  <img src="/image/tiktok.png" alt="TikTok INBA" />
+                </a>
+                <a id="yt-footer" href="https://www.youtube.com/@neurologiaINBA/featured" target="_blank" aria-label="YouTube INBA">
+                  <img src="/image/youtube.png" alt="YouTube INBA" />
+                </a>
+              </div>
+            </li>
+
+                  
+          </ul>
         </div>
-        <ul>
-          <li><a href="#hero">Inicio</a></li>
-          <li><a href="#tratamientos">Tratamientos</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
       </nav>
-    </div>
-  </header>
+  
+      <div class="overlay"></div>
 
-  <section class="hero" id="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Centro de Excelencia en Neurocirugía</h1>
-        <p>En el Instituto de Neurología Buenos Aires, combinamos más de 35 años de experiencia con tecnología de vanguardia para resolver patologías neurológicas complejas con precisión y humanidad.</p>
-        <div class="hero-buttons">
-          <a href="#contacto" class="btn">Solicitá una consulta</a>
-          <a href="https://api.whatsapp.com/send?phone=541147884800" class="btn btn-outline">Hablar por WhatsApp</a>
+
+<!-- Hero Section -->
+<section id="hero" class="hero" role="banner" aria-label="Hero de Neurocirugía">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Centro de Excelencia en Neurocirugía</h1>
+
+    <ul class="hero-features">
+      <li>Tecnología de última generación</li>
+      <li>Equipo con +35 años de experiencia</li>
+      <li>Trato humano y personalizado</li>
+    </ul>
+
+    <div class="hero-buttons">
+      <a href="#contacto" class="btn btn-primary">Solicitá una consulta</a>
+      <a href="https://api.whatsapp.com/send?phone=541147884800" class="btn btn-secondary">Hablar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --azul-oscuro: #1e1e2d;
+    --gris-claro: #f5f5f5;
+    --blanco: #ffffff;
+    --azul-acento: #007bff;
+    --azul-acento-hover: #0056b3;
+  }
+  .hero {
+    position: relative;
+    background: url('/image/webp/Medicos_Tms.webp') center/cover no-repeat;
+    color: var(--blanco);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65));
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    text-align: center;
+    padding: clamp(2rem, 5vw, 4rem);
+    animation: fadeInUp 0.8s ease-out;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  }
+  .hero-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .hero-features li {
+    position: relative;
+    padding-left: 2.5rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.4;
+  }
+  .hero-features li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--azul-acento);
+    color: var(--blanco);
+    border-radius: 50%;
+    font-size: 1.1rem;
+  }
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  .btn-primary {
+    background: var(--azul-acento);
+    color: var(--blanco);
+  }
+  .btn-primary:hover {
+    background: var(--azul-acento-hover);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--blanco);
+    border: 2px solid var(--blanco);
+  }
+  .btn-secondary:hover {
+    background: var(--blanco);
+    color: var(--azul-oscuro);
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (max-width: 600px) {
+    .hero-features li { font-size: 1rem; }
+    .hero-buttons { flex-direction: column; }
+  }
+</style>
+
+
+
+    
+<!-- Tratamientos Section -->
+<section id="tratamientos" class="tratamientos" aria-labelledby="tratamientos-title">
+  <div class="container">
+    <h2 id="tratamientos-title">Tratamientos Neuroquirúrgicos en INBA</h2>
+    <p class="intro">Nuestro equipo combina precisión, tecnología avanzada y enfoque humano para abordar desde aneurismas hasta tumores y patologías de columna.</p>
+    <div class="cards">
+      <article class="card" tabindex="0" role="link" aria-label="Aneurismas cerebrales">
+        <h3>Aneurismas cerebrales</h3>
+        <p>Soluciones mínimamente invasivas para dilataciones vasculares con alto riesgo, priorizando tu seguridad.</p>
+      </article>
+      <article class="card" tabindex="0" role="link" aria-label="Tumores cerebrales">
+        <h3>Tumores cerebrales</h3>
+        <p>Resección guiada por imagen y neuroprotección para preservar funciones críticas.</p>
+      </article>
+      <article class="card" tabindex="0" role="link" aria-label="Hidrocefalia">
+        <h3>Hidrocefalia</h3>
+        <p>Implante de válvulas de última generación para controlar el líquido cefalorraquídeo.</p>
+      </article>
+      <article class="card" tabindex="0" role="link" aria-label="Neuralgia del trigémino">
+        <h3>Neuralgia del trigémino</h3>
+        <p>Tratamientos quirúrgicos de precisión para aliviar el dolor facial intenso.</p>
+      </article>
+      <article class="card" tabindex="0" role="link" aria-label="Hernia de disco">
+        <h3>Hernia de disco</h3>
+        <p>Procedimientos especializados para restablecer tu movilidad y reducir el dolor.</p>
+      </article>
+      <article class="card" tabindex="0" role="link" aria-label="Glioma / Meningioma">
+        <h3>Glioma / Meningioma</h3>
+        <p>Cirugías precisas con enfoque en preservar funciones motoras y cognitivas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hero styles (previos) aquí... */
+
+  /* Tratamientos Styles */
+  .tratamientos {
+    padding: clamp(3rem, 5vw, 4rem) 1rem;
+    background: #f9f9f9;
+  }
+  .tratamientos .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .tratamientos h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    color: var(--azul-oscuro);
+  }
+  .tratamientos .intro {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--blanco);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .card:focus,
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--azul-acento);
+  }
+  .card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  @media (max-width: 600px) {
+    .tratamientos .intro { font-size: 1rem; }
+  }
+</style>
+
+
+<!-- Professional Horizontal Timeline -->
+<section id="timeline" class="timeline-horizontal" aria-labelledby="timeline-title">
+  <div class="container">
+    <h2 id="timeline-title">Nuestra Trayectoria</h2>
+    <!-- Indicador de scroll en móvil -->
+    <div class="scroll-hint-mobile">Desliza para ver más →</div>
+    <div class="timeline-wrap">
+      <div class="timeline-line"></div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h3>1988</h3>
+          <p>Fundación del Instituto de Neurología Buenos Aires.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h3>2000</h3>
+          <p>Primer caso pionero de Estimulación Magnética Transcraneana (TMS) en Argentina.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-content">
+          <h3>2015</h3>
+          <p>Instalación de nuestro quirófano híbrido de última generación.</p>
+        </div>
+      </div>
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-content">
+          <h3>2023</h3>
+          <p>Más de 1.200 neurocirugías exitosas y pacientes recuperados.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="tratamientos">
-    <h2>Tratamientos neuroquirúrgicos realizados en INBA</h2>
-    <p>Nuestro equipo aborda un amplio espectro de patologías cerebrales y de columna con precisión, tecnología avanzada y enfoque humano.</p>
-    <div class="condiciones">
-      <div class="card">
-        <h3>Aneurismas cerebrales</h3>
-        <p>Tratamiento quirúrgico de dilataciones vasculares con riesgo de ruptura.</p>
+
+<style>
+  /* Hero and tratamientos styles unchanged */
+
+  /* Horizontal Timeline Styles */
+  .timeline-horizontal {
+    padding: clamp(3rem, 5vw, 6rem) 1rem;
+    background: var(--gris-claro);
+  }
+  .timeline-horizontal .container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .scroll-hint-mobile {
+    display: none;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: right;
+    margin-bottom: 0.5rem;
+  }
+  .timeline-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 2rem;
+  }
+  .timeline-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+  .timeline-wrap::-webkit-scrollbar-thumb {
+    background: var(--azul-acento);
+    border-radius: 3px;
+  }
+  .timeline-line {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--azul-acento);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .timeline-item {
+    position: relative;
+    flex: 0 0 250px;
+    scroll-snap-align: start;
+    padding: 1rem;
+    background: var(--blanco);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    z-index: 2;
+  }
+  
+  .timeline-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--azul-oscuro);
+  }
+  .timeline-content p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.4;
+  }
+  @media (max-width: 600px) {
+    .scroll-hint-mobile {
+      display: block;
+    }
+    .timeline-wrap { gap: 1rem; }
+    .timeline-item { flex: 0 0 200px; }
+    .timeline-line { top: 40px; }
+    .timeline-item::before { width: 12px; height: 12px; top: 40px; }
+  }
+</style>
+
+
+<!-- Publicaciones Section -->
+<section id="publicaciones" class="publicaciones" aria-labelledby="publicaciones-title">
+  <div class="container">
+    <h2 id="publicaciones-title">Publicaciones y Avances</h2>
+    <p class="intro">Descubre nuestros últimos estudios y hallazgos, reflejo de nuestro compromiso con la innovación y la mejora continua.</p>
+    <div class="cards">
+      <article class="card">
+        <img src="/path/to/cover1.jpg" alt="Decibel Decisions Portada" class="card-img">
+        <h3>Decibel Decisions: Concept of Intracranial Aneurysm Surgery</h3>
+        <a href="/docs/decibel-decisions.pdf" class="btn btn-outline">Descargar</a>
+      </article>
+      <article class="card">
+        <img src="/path/to/cover2.jpg" alt="Abordaje Extremolateral Portada" class="card-img">
+        <h3>Abordaje Extremolateral en Neurocirugía</h3>
+        <a href="/docs/abordaje-extremolateral.pdf" class="btn btn-outline">Descargar</a>
+      </article>
+      <!-- más publicaciones -->
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* Publicaciones Styles (matched to tratamientos) */
+.publicaciones {
+  padding: clamp(3rem, 5vw, 6rem) 1rem;
+  background: var(--gris-claro);
+}
+.publicaciones .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.publicaciones h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  color: var(--azul-oscuro);
+}
+.publicaciones .intro {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.publicaciones .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.publicaciones .card {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.publicaciones .card:hover,
+.publicaciones .card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.publicaciones .card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.publicaciones h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--azul-acento);
+}
+.publicaciones .btn-outline {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--azul-acento);
+  border-radius: 8px;
+  color: var(--azul-acento);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+.publicaciones .btn-outline:hover {
+  background: var(--azul-acento);
+  color: var(--blanco);
+}
+
+/* Media queries for scroll hint */
+@media (max-width: 600px) {
+  .scroll-hint-mobile { display: block; }
+}
+</style>
+
+
+
+  
+  <!-- Contacto -->
+  <section id="contacto" class="contacto" data-aos="fade-up">
+    <h2>Ubicación y contacto</h2>
+    <p class="contacto-subtitulo">Nos encontramos en el corazón de Belgrano, con fácil acceso desde toda la ciudad.</p>
+  
+    <div class="contacto-grid">
+      <!-- Info de contacto -->
+      <div class="contacto-info-centro">
+        <ul class="info-lista">
+          <li>
+            <span class="icono">📍</span>
+            <div><strong>Dirección:</strong><br> Ciudad de la Paz 1485, CABA</div>
+          </li>
+          <li>
+            <span class="icono">📞</span>
+            <div><strong>Teléfono:</strong><br> <a id="tel-contacto" href="tel:+541147884800">(5411) 4788-4800</a></div>
+          </li>
+          <li>
+            <span class="icono">📧</span>
+            <div><strong>Email:</strong><br> <a id="mail-contacto" href="mailto:info@neurologiainba.com.ar">info@neurologiainba.com.ar</a></div>
+          </li>
+        </ul>        
+  
+        <div class="cta contacto-cta">
+          <a id="whap-contacto" href="https://wa.me/5491167063332" target="_blank">Solicitar turno por WhatsApp</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Tumores cerebrales</h3>
-        <p>Resección de tumores con técnicas mínimamente invasivas y neuroprotección.</p>
-      </div>
-      <div class="card">
-        <h3>Hidrocefalia</h3>
-        <p>Diagnóstico y colocación de válvulas para regular el líquido cefalorraquídeo.</p>
-      </div>
-      <div class="card">
-        <h3>Neuralgia del trigémino</h3>
-        <p>Abordaje quirúrgico de una de las causas más intensas de dolor facial.</p>
-      </div>
-      <div class="card">
-        <h3>Hernia de disco</h3>
-        <p>Cirugías especializadas para aliviar dolor lumbar o cervical.</p>
-      </div>
-      <div class="card">
-        <h3>Glioma / Meningioma</h3>
-        <p>Resección precisa de lesiones con enfoque en funciones motoras y cognitivas.</p>
+
+      <!-- Mapa -->
+      <div class="contacto-mapa-centro">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.4409260763723!2d-58.452537799999995!3d-34.5677082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5d009468d1d%3A0xd0a8fc2259469d9f!2sInstitute%20of%20Neurology%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1743635792333!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
       </div>
     </div>
+  
+    <p class="frase-final">Te esperamos en INBA, donde la excelencia médica y el trato humano van de la mano.</p>
   </section>
+  
+  
 
-  <section class="testimonios" id="testimonios">
-    <h2>Pacientes que confiaron en INBA</h2>
-    <blockquote>“La contención y claridad que recibí en cada paso del tratamiento me permitió tomar decisiones con tranquilidad. Eternamente agradecido.”</blockquote>
-    <blockquote>“Fui derivada a INBA por un caso complejo y desde el primer momento sentí confianza. Me explicaron todo con detalle y el seguimiento fue excelente.”</blockquote>
-    <blockquote>“Recuperé mi calidad de vida luego de una cirugía de columna. Gran equipo, gran trato humano.”</blockquote>
-  </section>
-
-  <section id="contacto">
-    <h2>¿Necesitás una consulta o una segunda opinión?</h2>
-    <p>En INBA ofrecemos una evaluación integral y profesional de tu caso. Nuestro equipo está disponible para responder tus dudas y acompañarte con experiencia y compromiso.</p>
-    <div class="cta">
-      <a href="https://api.whatsapp.com/send?phone=541147884800" class="btn">Hablar con nuestro equipo</a>
+  <!-- Footer -->
+  <footer class="footer-inba">
+    <div class="footer-grid">
+      
+      <!-- Columna 1: Logo y descripción -->
+      <div class="footer-logo">
+        <img src="/image/webp/INBA-logo-blanco-sinRelleno.webp" alt="Logo INBA">
+        <p>Instituto de Neurología Buenos Aires</p>
+        <p class="footer-desc">Centro médico de excelencia en neurología con más de 35 años de trayectoria. Tecnología de vanguardia, atención cálida y personalizada.</p>
+      </div>
+  
+      <!-- Columna 2: Navegación -->
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/estudios-neurologicos.html">Servicios</a></li>
+          <li><a href="/tms.html">TMS</a></li>
+          <li><a href="/neurologia-belgrano-inba.html">Nosotros</a></li>
+          <li><a href="/neurologia-contacto-belgrano.html">Contacto</a></li>
+          <li><a id="to-footer" href="https://turnos.elijasuturno.com.ar:444/inba">Turnos Online</a></li>
+        </ul>
+      </div>
+  
+      <!-- Columna 3: Contacto + Redes -->
+      <div class="footer-contacto">
+        <h4>Contacto</h4>
+        <p><span>📍</span> Ciudad de la Paz 1485, CABA</p>
+        <p><span>📞</span> <a id="tel-footer" href="tel:+541147884800">(5411) 4788-4800</a></p>
+        <p><span>📧</span> <a id="mail-footer" href="mailto:info@neurologiainba.com.ar">info@neurologiainba.com.ar</a></p>
+  
+        <h4 style="margin-top: 1.5rem;">Seguinos en nuestras redes</h4>
+        <div class="footer-redes">
+          <a id="ig-footer" href="https://www.instagram.com/inba.neurologia" target="_blank" aria-label="Instagram INBA">
+            <img src="/image/instagram.png" alt="Instagram INBA" loading="lazy"/>
+          </a>
+          <a id="tiktok-footer" href="https://www.tiktok.com/@doctorandersson" target="_blank" aria-label="TikTok Dr. Andersson" loading="lazy">
+            <img src="/image/tiktok.png" alt="TikTok INBA" />
+          </a>
+          <a id="yt-footer" href="https://www.youtube.com/@neurologiaINBA/featured" target="_blank" aria-label="YouTube INBA" loading="lazy">
+            <img src="/image/youtube.png" alt="YouTube INBA" />
+          </a>
+        </div>
+      </div>
+  
     </div>
-  </section>
+  
+    <hr class="footer-line">
+  
+    <div class="footer-copy">
+      <p>&copy; 2025 Instituto de Neurología INBA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
+
+  <!-- Botón de WhatsApp -->
+  <a id="cta-whap-float" href="https://wa.me/5491167063332?text=Hola.%20Quiero%20solicitar%20un%20turno" target="_blank" class="whatsapp-button">
+    <img src="image/Whatsapp.png" alt="WhatsApp">
+    <span>Agenda tu turno</span>
+  </a>
+
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
+  <script> AOS.init({ once: true }); </script>
+  <script src="/js/menu.js" defer></script>
 
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('nav-menu');
-    const closeBtn = document.getElementById('nav-close');
-
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      menu.classList.toggle('active');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      menu.classList.remove('active');
-    });
-  </script>
+ 
 </body>
 </html>
