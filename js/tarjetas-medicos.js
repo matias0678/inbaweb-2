@@ -1,7 +1,7 @@
 const cards = document.querySelectorAll('.cards-grid .card');
 let currentFiltro = null;
 
-document.querySelectorAll('.index-links a').forEach(link => {
+document.querySelectorAll('.indice-especialidades a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
 
